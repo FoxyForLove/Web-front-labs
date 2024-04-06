@@ -1,0 +1,27 @@
+body {
+    background-color: SeaShell; 
+    color: rgba(97, 15, 15, 0.945); 
+    font-family: 'Century Gothic';
+    margin: 0px
+}
+header {
+    background-color: rgba(175, 96, 76, 0.13);
+     color: rgba(131, 20, 20, 0.568); 
+     margin: 0px;  
+     padding: 15px; 
+     font-size: 15pt; 
+     text-align: center
+}
+main { 
+    color: rgba(97, 16, 16, 0.671); 
+     margin: 5px;  
+     font-size: 12pt; 
+}
+footer {
+    background-color: rgba(175, 96, 76, 0.13);
+     color: rgba(131, 20, 20, 0.568); 
+     margin: 0px;  
+     padding: 15px; 
+     font-size: 10pt; 
+     text-align: center
+}
