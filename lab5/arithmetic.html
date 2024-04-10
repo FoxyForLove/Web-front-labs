@@ -15,6 +15,14 @@
             let result = a + b;
             alert('Сумма '+ a +' и '+ b +' равна ' + result);
         }
+        function showAuthor() {
+            let author = 'Автор страницы: \nБулыигна Елизавета Денисовна';
+            alert(author);
+        }
+        function showMessage() {
+            let message = 'Ухади >:/';
+            alert(message);
+        }
     </script>
     <style>
         .message {margin: 20px;
@@ -25,19 +33,22 @@
         display: inline-block;
         cursor: pointer;
         }
+        footer {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
     
     <main>
         <div class="message" onclick="showSum()"> Сколько будет 5154+7891? </div>
-        <div class="message"> Узнать, кто автор страницы </div>
+        <div class="message" onclick="showAuthor()"> Узнать, кто автор страницы </div>
     </main>
 
-    <footer>
+    <footer ondblclick="showMessage()">
         &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
     </footer>
 </body>
