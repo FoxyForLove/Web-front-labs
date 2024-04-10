@@ -25,21 +25,26 @@ footer {
      font-size: 10pt; 
      text-align: center
 }
-a:link { 
+a { 
     color:rgb(192, 117, 117);
     text-decoration: none;
+    transition: 1s 2s;
+}
+a:link { 
+    color:rgb(160, 77, 77);
+    
 }
 a:visited {
     color: olive;
-    background: rgba(241, 222, 213, 0.788);
 }
 a:hover {
     color:rgba(97, 15, 15, 0.945);
     text-decoration: underline;
     background: rgb(197, 154, 143);
+    transition: 0.3s
 }
 a:active {
-    color:rgba(255, 241, 237, 0.13);
+    color:rgb(80, 23, 8);
     opacity: 0,3;
 }
 
