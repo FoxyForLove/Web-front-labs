@@ -47,4 +47,14 @@ a:active {
     color:rgb(80, 23, 8);
     opacity: 0,3;
 }
+div.menu {
+    border: 2px solid rgba(236, 204, 195, 0.829);
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: rgb(243, 230, 226);
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+}
 
