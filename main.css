@@ -6,24 +6,35 @@ body {
 }
 header {
     background-color: rgba(175, 96, 76, 0.13);
-     color: rgba(131, 20, 20, 0.568); 
-     margin: 0px;  
-     padding: 15px; 
-     font-size: 15pt; 
-     text-align: center
+    color: rgba(131, 20, 20, 0.568); 
+    margin: 0px;  
+    padding: 15px; 
+    font-size: 15pt; 
+    text-align: center
 }
 main { 
     color: rgba(97, 16, 16, 0.671); 
-     margin: 5px;  
-     font-size: 12pt; 
+    margin: 10px 20px ;  
+    font-size: 12pt; 
 }
 footer {
     background-color: rgba(175, 96, 76, 0.13);
-     color: rgba(131, 20, 20, 0.568); 
-     margin: 0px;  
-     padding: 15px; 
-     font-size: 10pt; 
-     text-align: center
+    color: rgba(131, 20, 20, 0.568); 
+    margin: 0px;  
+    padding: 15px; 
+    font-size: 10pt; 
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+h1.o {
+    color: rgba(131, 20, 20, 0.568); 
+    margin: 0px;  
+    padding: 15px; 
+    font-size: 20pt; 
+    text-align: center;
 }
 a { 
     color:rgb(192, 117, 117);
