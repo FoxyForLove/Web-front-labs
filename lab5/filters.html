@@ -29,6 +29,11 @@
             document.getElementById('grayscaleOutput').innerText = value + '%';
             document.getElementById('blurImage').style.filter = 'grayscale('+ value + '%)';
         }
+        function hueRotateChange() {
+            let value = document.getElementById('hueRotateValue').value;
+            document.getElementById('hueRotateOutput').innerText = value + 'deg';
+            document.getElementById('blurImage').style.filter = 'hue-rotate('+ value + 'deg)';
+        }
     </script>
 </head>
 <body>
@@ -56,6 +61,11 @@
             Фильтр grayscale:
             <input type="range" min="0" max="100" value="0" onchange="grayscaleChange()" id="grayscaleValue">
             <span id="grayscaleOutput">0%</span>
+        </div>
+        <div>
+            Фильтр hue-rotate:
+            <input type="range" min="0" max="360" value="0" onchange="hueRotateChange()" id="hueRotateValue">
+            <span id="hueRotateOutput">0deg</span>
         </div>
         <div>
             <img src="Sparkle.jpg" id="blurImage">
