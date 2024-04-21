@@ -34,6 +34,11 @@
             document.getElementById('hueRotateOutput').innerText = value + 'deg';
             document.getElementById('blurImage').style.filter = 'hue-rotate('+ value + 'deg)';
         }
+        function invertChange() {
+            let value = document.getElementById('invertValue').value;
+            document.getElementById('invertOutput').innerText = value + '%';
+            document.getElementById('blurImage').style.filter = 'invert('+ value + '%)';
+        }
     </script>
 </head>
 <body>
@@ -66,6 +71,11 @@
             Фильтр hue-rotate:
             <input type="range" min="0" max="360" value="0" onchange="hueRotateChange()" id="hueRotateValue">
             <span id="hueRotateOutput">0deg</span>
+        </div>
+        <div>
+            Фильтр invert:
+            <input type="range" min="0" max="100" value="0" onchange="invertChange()" id="invertValue">
+            <span id="invertOutput">0%</span>
         </div>
         <div>
             <img src="Sparkle.jpg" id="blurImage">
