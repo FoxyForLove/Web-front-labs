@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Булыгина Елизавета Денисовна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 340px;
+            margin: 60px auto;
+            padding: 20px;
+            border: 4px solid #7515151e;
+            border-radius: 10px;
+            background-color:rgba(160, 92, 92, 0.164);
+        }
+        .item {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .total {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function calculateTotal() {
+            let item1 = parseInt(document.getElementById('item1').value) || 0;
+            let item2 = parseInt(document.getElementById('item2').value) || 0;
+            let item3 = parseInt(document.getElementById('item3').value) || 0;
+            let item4 = parseInt(document.getElementById('item4').value) || 0;
+            let item5 = parseInt(document.getElementById('item5').value) || 0;
+    
+            let total = item1 * 60 + item2 * 120 + item3 * 60 + item4 * 160 + item5 * 360;
+            
+            document.getElementById('total').textContent = 'Общая сумма к оплате: ' + total + 'р';
+        }
+    
+        function clearCart() {
+            document.getElementById('item1').value = '';
+            document.getElementById('item2').value = '';
+            document.getElementById('item3').value = '';
+            document.getElementById('item4').value = '';
+            document.getElementById('item5').value = '';
+            document.getElementById('total').textContent = '';
+        }
+    </script>
+    </head>
+    <body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+    
+    <main>
+        <div class="container">
+            <h1> Корзина товаров</h1>
+            <div class="item">
+                <label for="item1">Яблоки (60р/шт) :</label>
+                <input type="number" id="item1" min="0" onkeyup="if(value<0) value=0;" placeholder="Введите количество">
+            </div>
+            <div class="item">
+                <label for="item2">Киви (120р/шт) :</label>
+                <input type="number" id="item2" min="0" onkeyup="if(value<0) value=0;" placeholder="Введите количество">
+            </div>
+            <div class="item">
+                <label for="item3">Бананы (60р/шт):</label>
+                <input type="number" id="item3" min="0" onkeyup="if(value<0) value=0;" placeholder="Введите количество">
+            </div>
+            <div class="item">
+                <label for="item4">Черешня (160р/кг):</label>
+                <input type="number" id="item4" min="0" onkeyup="if(value<0) value=0;"placeholder="Введите количество">
+            </div>
+            <div class="item">
+                <label for="item5">Помело (360р/шт):</label>
+                <input type="number" id="item5" min="0" onkeyup="if(value<0) value=0;" placeholder="Введите количество">
+            </div>
+            <button onclick="calculateTotal()">Рассчитать</button>
+            <button onclick="clearCart()">Очистить</button>
+            <div id="total" class="total"></div>
+        </div>
+    </main>
+    <footer>
+        &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+</body>
+</html>
