@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Булыгина Елизавета Денисовна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+    </style>
+    <script>
+        function hideCircle(event) {
+            event.target.style.transform = 'scale(0)';
+            event.target.style.opacity = '0';
+        }
+
+        function showCircles() {
+            document.querySelectorAll('.circle').forEach(circle => {
+                circle.style.transform = 'scale(1)';
+                circle.style.opacity = '1';
+            });
+        }
+        function randomPosition() {
+            return Math.floor(Math.random() * 340) + 'px';
+        }
+
+        window.onload = function() {
+            document.querySelectorAll('.circle').forEach(circle => {
+                circle.style.top = randomPosition();
+                circle.style.left = randomPosition();
+            });
+        };
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <button onclick="showCircles()">Показать все круги</button>
+        <div class="container">
+            <div class="circle" style="background-color: #d2691e;" onclick="hideCircle(event)">1</div>
+            <div class="circle" style="background-color: #8b0000;" onclick="hideCircle(event)">2</div>
+            <div class="circle" style="background-color: #b22222;" onclick="hideCircle(event)">3</div>
+            <div class="circle" style="background-color: #dc143c;" onclick="hideCircle(event)">4</div>
+            <div class="circle" style="background-color: #ff4500;" onclick="hideCircle(event)">5</div>
+            <div class="circle" style="background-color: #ff0000;" onclick="hideCircle(event)">6</div>
+            <div class="circle" style="background-color: #a52a2a;" onclick="hideCircle(event)">7</div>
+            <div class="circle" style="background-color: #b03060;" onclick="hideCircle(event)">8</div>
+            <div class="circle" style="background-color: #cd5c5c;" onclick="hideCircle(event)">9</div>
+            <div class="circle" style="background-color: #ff69b4;" onclick="hideCircle(event)">10</div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
