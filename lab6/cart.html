@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №6 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <style>
+        main {
+            text-align: center; 
+        }
+        table {
+            border-collapse: collapse;
+            width: auto;
+            margin: 0 auto;   
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        #result.error {
+            color: red;
+        }
+    </style>
+    <script>
+        function calculateTotal() {
+            var balanceInput = document.getElementById("balance");
+            var balance = parseFloat(balanceInput.value);
+
+            if (isNaN(balance) || balance <= 0) {
+                alert("Ошибка: Пожалуйста, введите корректное значение баланса!");
+                return;
+            }
+
+            var total = 0;
+            var hasItems = false;
+
+            for (var i = 1; i <= 7; i++) {
+                var quantity = parseInt(document.getElementById("item" + i).value);
+                if (!isNaN(quantity) && quantity > 0) {
+                    hasItems = true;
+                    var price = parseInt(document.getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML);
+                    total += price * quantity;
+                } else if (quantity < 0) {
+                    alert("Ошибка: Количество товара не может быть отрицательным!");
+                    return;
+                }
+            }
+
+            if (!hasItems) {
+                alert("Ошибка: Нужно выбрать хотя бы один товар!");
+                return;
+            }
+
+            var resultDiv = document.getElementById("result");
+            var totalAmountDiv = document.getElementById("totalAmount");
+
+            totalAmountDiv.innerHTML = "Итоговая сумма покупок: " + total.toFixed(2) + " руб.";
+
+            if (total > balance) {
+                resultDiv.innerHTML = "Ошибка: Общая сумма покупок превышает ваш баланс!";
+                resultDiv.className = "error";
+            } else {
+                resultDiv.innerHTML = "Покупки успешно оформлены!";
+                resultDiv.className = "";
+            }
+        }
+    </script>
+
+    </script>
+</head>
+<body>
+    <header>
+            НГТУ, ФБ, Лабораторная работа 6
+            <hr>
+    </header>
+
+    <main>
+        <label for="balance">Мой баланс:</label>
+        <input type="number" id="balance" min="0" step="0.01"><br><br>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Номер</th>
+                    <th>Продукт</th>
+                    <th>Цена (руб.)</th>
+                    <th>Количество</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Яблоко</td>
+                    <td>50</td>
+                    <td><input type="number" id="item1" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Молоко</td>
+                    <td>80</td>
+                    <td><input type="number" id="item2" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Хлеб белый</td>
+                    <td>60</td>
+                    <td><input type="number" id="item3" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Яйца</td>
+                    <td>70</td>
+                    <td><input type="number" id="item4" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Масло</td>
+                    <td>120</td>
+                    <td><input type="number" id="item5" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Сахар</td>
+                    <td>40</td>
+                    <td><input type="number" id="item6" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Чай</td>
+                    <td>30</td>
+                    <td><input type="number" id="item7" min="0" step="1"></td>
+                </tr>
+            </tbody>
+        </table><br>
+
+        <button onclick="calculateTotal()">ОК</button>
+
+        <div id="totalAmount"></div>
+        <div id="result"></div>
+        
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+
+</body>
+</html>
