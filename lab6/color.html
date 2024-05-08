@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №6 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <style>
+       .color {
+            background-color: #ecc9bb; 
+            color: #473434; 
+            padding: 10px; 
+            border-radius: 5px;
+            width: 200px; 
+            text-align: center; 
+            border: 2px solid #743838;
+            margin: 0 auto;
+            cursor: pointer; 
+            transition: background-color 0.3s, color 0.3s;
+       }
+       .color:hover {
+            transform: scale(1.1);
+       }
+    </style>
+    <script>
+        function changeColor(div) {
+            if(div.style.backgroundColor == 'rgb(236, 201, 187)') {
+                div.style.backgroundColor = 'rgb(250, 219, 200)';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'Пурпурно-белый';
+            } 
+            else if(div.style.backgroundColor == 'rgb(250, 219, 200)') {
+                div.style.backgroundColor = 'rgb(233, 150, 122)';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'Темно-лососевый';
+            } 
+            else if(div.style.backgroundColor == 'rgb(233, 150, 122)') {
+                    div.style.backgroundColor = 'rgb(152, 105, 96)';
+                    div.style.color = 'white'
+                    document.getElementById('color-name').innerHTML = 'Тёмно-каштановый';
+            } 
+            else if(div.style.backgroundColor == 'rgb(152, 105, 96)') {
+                    div.style.backgroundColor = 'rgb(117, 90, 87)';
+                    div.style.color = 'white'
+                    document.getElementById('color-name').innerHTML = 'Красновато-коричневый';
+            }
+            else {
+                div.style.backgroundColor = 'rgb(236, 201, 187)';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'Песок пустыни';
+            }          
+        }
+    </script>
+</head>
+<body>
+    <header>
+            НГТУ, ФБ, Лабораторная работа 6
+            <hr>
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name"> Песок пустыни </span><br>
+            Сделайте двойной щелчок, чтобы сменить.
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+
+</body>
+</html>
