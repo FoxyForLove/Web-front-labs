@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №6 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <style>
+        #wear-container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+    }
+        #wear {
+            width: 400px; 
+            height: auto
+    }
+    </style>
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if(color == "Бежевый" && type == "Футболка") {
+                wear.src = '1.jpg';
+            }
+            else if (color == "Белый" && type == "Футболка") {
+                wear.src = '2.jpg';
+            } 
+            else if (color == "Черный" && type == "Футболка") {
+                wear.src = '3.jpg';
+            } 
+            else if (color == "Бежевый" && type == "Худи") {
+                wear.src = '4.jpg';
+            } 
+            else if (color == "Белый" && type == "Худи") {
+                wear.src = '5.jpg';
+            } 
+            else if (color == "Черный" && type == "Худи") {
+                wear.src = '6.jpg';
+            } 
+            else if (color == "Бежевый" && type == "Топ") {
+                wear.src = '7.jpg';
+            } 
+            else if (color == "Белый" && type == "Топ") {
+                wear.src = '8.jpg';
+            } 
+            else if (color == "Черный" && type == "Топ") {
+                wear.src = '9.jpg';
+            }
+        }
+    </script>
+<body>
+    <header>
+            НГТУ, ФБ, Лабораторная работа 6
+            <hr>
+    </header>
+
+    <main>
+        <div id="wear-container">
+            Цвет одежды:<br>
+            <select id="wear-color">
+                <option>Бежевый</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+
+            Тип одежды:<br>
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Худи</option>
+                <option>Топ</option>
+            </select><br>
+
+            <button onclick="filter()">ОК</button><br>
+
+            <img id="wear"><br>
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+
+</body>
+</html>
