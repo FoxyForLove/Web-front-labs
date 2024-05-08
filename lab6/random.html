@@ -17,6 +17,13 @@
         padding: 20px; 
         text-align: center;
     }
+    .help {
+        border: 2px solid #000; 
+        border-radius: 10px; 
+        width: 80%; 
+        margin: 10px auto; 
+        padding: 20px; 
+    }
     </style>
     <script>
         let number;
@@ -73,6 +80,19 @@
             document.getElementById('result').innerHTML = ''; 
             document.getElementById('user-number').value = '';
         }
+
+        function showRules() {
+            document.getElementById('rules').style.display = 'block';
+            document.getElementById('showRulesButton').style.display = 'none';
+            document.getElementById('hideRulesButton').style.display = 'inline-block';
+        }
+
+        function hideRules() {
+            document.getElementById('rules').style.display = 'none';
+            document.getElementById('hideRulesButton').style.display = 'none';
+            document.getElementById('showRulesButton').style.display = 'inline-block';
+        }
+
     </script>
 </head>
 <body>
@@ -111,6 +131,21 @@
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
        </div>
+
+       <div class="help">
+            <button id="showRulesButton" onclick="showRules()">Показать правила игры</button>
+            <button id="hideRulesButton" style="display: none;" onclick="hideRules()">Скрыть правила игры</button>
+            <div id="rules" style="display: none;">
+                <h2>Правила игры:</h2>
+                <ol>
+                    <li>Выберите число от 1 до 100.</li>
+                    <li>Нажмите кнопку "Угадать".</li>
+                    <li>Если ваше число больше загаданного, вы получите подсказку "Слишком большое число".</li>
+                    <li>Если ваше число меньше загаданного, вы получите подсказку "Слишком маленькое число".</li>
+                    <li>Продолжайте угадывать, пока не угадаете число или не сдадитесь.</li>
+                </ol>
+            </div>
+        </div>
 
 
     </main>
