@@ -28,22 +28,22 @@
     </style>
     <script>
         function calculateTotal() {
-            var balanceInput = document.getElementById("balance");
-            var balance = parseFloat(balanceInput.value);
+            let balanceInput = document.getElementById("balance");
+            let balance = parseFloat(balanceInput.value);
 
             if (isNaN(balance) || balance <= 0) {
                 alert("Ошибка: Пожалуйста, введите корректное значение баланса!");
                 return;
             }
 
-            var total = 0;
-            var hasItems = false;
+            let total = 0;
+            let hasItems = false;
 
-            for (var i = 1; i <= 7; i++) {
-                var quantity = parseInt(document.getElementById("item" + i).value);
+            for (let i = 1; i <= 7; i++) {
+                let quantity = parseInt(document.getElementById("item" + i).value);
                 if (!isNaN(quantity) && quantity > 0) {
                     hasItems = true;
-                    var price = parseInt(document.getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML);
+                    let price = parseInt(document.getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML);
                     total += price * quantity;
                 } else if (quantity < 0) {
                     alert("Ошибка: Количество товара не может быть отрицательным!");
@@ -56,8 +56,8 @@
                 return;
             }
 
-            var resultDiv = document.getElementById("result");
-            var totalAmountDiv = document.getElementById("totalAmount");
+            let resultDiv = document.getElementById("result");
+            let totalAmountDiv = document.getElementById("totalAmount");
 
             totalAmountDiv.innerHTML = "Итоговая сумма покупок: " + total.toFixed(2) + " руб.";
 
