@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №7 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement ('div');
+            newBlock.style.backgroundColor = 'rgb(236, 201, 187)';
+            newBlock.style.height = '40px';
+            newBlock.style.border = '2px solid #8b4513'; 
+            newBlock.style.margin ='10px 0'; 
+            newBlock.style.width = '200px'; 
+            newBlock.style.display = 'flex';
+            newBlock.style.alignItems = 'center';
+            newBlock.style.justifyContent = 'center';
+            newBlock.textContent = '😊';
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
+</head>
+<body>
+    <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr>
+    </header>
+
+    <main>
+        <button onclick="addNewBlock()">Добавить блок</button>
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+
+</body>
+</html>
