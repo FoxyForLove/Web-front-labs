@@ -9,7 +9,7 @@
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.ico">
     <style>
-        .circle {
+        .circle-counter {
             width: 20px;
             height: 20px;
             background-color: rgb(140, 100, 85);
@@ -18,7 +18,19 @@
             align-items: center;
             justify-content: center;
             color: white;
-            margin-right: 5px;
+            margin: 5px auto;
+        }
+        .colorful-circle {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(140, 100, 85);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            margin: 2px; 
         }
         .opacity-block {
             width: 50px;
@@ -31,11 +43,9 @@
             justify-content: center;
             margin: 10px auto;
         }
-        button {
-            margin: 20px 0;
-        }
-        input {
-            margin: 10px 0;
+        button, input {
+            display: block;
+            margin-bottom: 10px;
         }
         
     </style>
@@ -104,7 +114,7 @@
             while (counter >= -80) {
                 let circle = document.createElement('div');
                 circle.textContent = counter;
-                circle.classList.add('circle'); 
+                circle.classList.add('circle-counter'); 
                 circleContainer.appendChild(circle);
                 circle.style.fontSize = '12px';
                 counter -= 3;
@@ -122,9 +132,32 @@
                 block.classList.add('opacity-block'); 
                 block.style.opacity = opacity; 
                 main.appendChild(block);
-    }
-}
-        
+            }
+        }
+        function createColorfulCircles() {
+            let main = document.querySelector('main');
+            let circleCount = parseInt(document.getElementById('circleCount').value);
+
+            let circleContainer = document.createElement('div');
+            circleContainer.style.display = 'flex';
+
+            for (let i = circleCount; i > 0; i--) {
+                let circle = document.createElement('div');
+                circle.textContent = i;
+                circle.classList.add('colorful-circle');
+                if (i % 2 === 0) {
+                    circle.style.backgroundColor = 'rgb(236, 201, 187)'; 
+                    circle.style.color = 'black'; 
+                } else {
+                    circle.style.backgroundColor = 'rgb(187, 236, 201)';
+                    circle.style.color = 'black';
+                }
+                circleContainer.appendChild(circle);
+            }
+
+            main.appendChild(circleContainer); 
+        }
+
     </script>
 </head>
 <body>
@@ -140,6 +173,8 @@
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="createCircleCounter()">10=>-80</button>
         <button onclick="createOpacityBlocks()">Полупрозрачные блоки</button>
+        <input type="number" id="circleCount" placeholder="Введите количество кругов">
+        <button onclick="createColorfulCircles()">Цветные круги</button>
     </main>
 
     <footer>
