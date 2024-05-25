@@ -9,10 +9,16 @@
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.ico">
     <style>
-        main {
-            display: flex;
-            flex-direction: column;
+        .circle {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(140, 100, 85);
+            border-radius: 50%;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 5px;
         }
         button {
             margin: 20px 0;
@@ -20,6 +26,7 @@
         input {
             margin: 10px 0;
         }
+        
     </style>
     <script>
         function addNewBlock() {
@@ -27,7 +34,7 @@
             newBlock.style.backgroundColor = 'rgb(236, 201, 187)';
             newBlock.style.height = '40px';
             newBlock.style.border = '2px solid #8b4513'; 
-            newBlock.style.margin ='10px 0'; 
+            newBlock.style.margin ='10px auto'; 
             newBlock.style.width = '200px'; 
             newBlock.style.display = 'flex';
             newBlock.style.alignItems = 'center';
@@ -45,9 +52,9 @@
                 newBlock.style.backgroundColor = 'rgb(236, 201, 187)';
                 newBlock.style.height = '40px';  
                 newBlock.style.border = '2px solid #8b4513';
-                newBlock.style.margin = '10px 0';
+                newBlock.style.margin = '10px auto';
                 newBlock.style.paddingTop = '10px'; 
-                newBlock.style.paddingLeft = '10px'
+                newBlock.style.paddingLeft = '10px';
                 newBlock.style.width = `${200 + i * 20}px`;  
                 newBlock.innerHTML = `Блок № ${i + 1}: 2 * ${i}<sup>2</sup> = ${2 * i**2}`;
                 
@@ -59,7 +66,7 @@
             for (let i = 20; i<=50; i+=2.5) {
                 let newBlock = document.createElement('div');
                 newBlock.style.height = '60px'; 
-                newBlock.style.margin = '5px'; 
+                newBlock.style.margin = '5px auto';
                 newBlock.style.border = '2px solid #8b4513';
                 newBlock.style.backgroundColor = 'rgb(140, 100, 85)'; 
                 newBlock.style.color = 'white';  
@@ -75,6 +82,24 @@
                 main.appendChild(newBlock);
             }
         }
+        function createCircleCounter() {
+            let main = document.querySelector('main');
+            
+            // Создаем новый контейнер для кругов
+            let circleContainer = document.createElement('div');
+            circleContainer.style.display = 'flex'; 
+
+            let counter = 10;
+            while (counter >= -80) {
+                let circle = document.createElement('div');
+                circle.textContent = counter;
+                circle.classList.add('circle'); 
+                circleContainer.appendChild(circle);
+                circle.style.fontSize = '12px';
+                counter -= 3;
+            }
+            main.appendChild(circleContainer);
+            } 
     </script>
 </head>
 <body>
@@ -88,6 +113,7 @@
         <input type="number" id="blockCount" placeholder="Введите количество блоков">
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
+        <button onclick="createCircleCounter()">10=>-80</button>
     </main>
 
     <footer>
