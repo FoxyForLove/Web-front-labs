@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №7 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <style>
+        
+        .container {
+            background-color: #e2cdbb; /* светло-бежевый контейнер */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .weather-info {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #8b7354; /* коричневый */
+            color: #fff; /* белый текст */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #6b5e4e; /* более темный коричневый при наведении */
+        }
+    </style>
+    
+    <script>
+    function getWeatherForecast() {
+        const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FNovosibirsk';
+
+        fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const today = new Date().toISOString().split('T')[0]; /* для разделения строки по символу "T" и взятия первой части (даты)*/
+            const temperatureData = data.hourly;
+
+            let weatherInfo = document.querySelector('.weather-info');
+            weatherInfo.innerHTML = '<h2>Температура в Новосибирске сегодня:</h2>';
+
+            ['08:00', '12:00', '20:00'].forEach(time => {
+                const temperatureIndex = temperatureData.time.indexOf(`${today}T${time}`);
+                const temperature = temperatureIndex !== -1 ? temperatureData.temperature_2m[temperatureIndex] : 'Нет данных';
+                /*определяем температуру для указанной временной метки*/
+                weatherInfo.innerHTML += `<p>В ${time} - ${temperature} °C</p>`;
+            });
+        })
+        .catch(error => console.log('Ошибка при получении данных о погоде:', error));
+    }
+</script>
+</head>
+<body>
+    <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Прогноз погоды в Новосибирске</h1>
+            <button onclick="getWeatherForecast()">Получить прогноз</button>
+            <div class="weather-info"></div>
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+
+</body>
+</html>
