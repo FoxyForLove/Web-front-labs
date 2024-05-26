@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №7 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <script>
+        function showStockPrices() {
+            const dates = [
+                "13.05.2024", "14.05.2024", "15.05.2024", "16.05.2024", "17.05.2024", 
+                "20.05.2024", "21.05.2024", "22.05.2024", "23.05.2024", "24.05.2024"
+            ];
+            const stockPrices = [
+                3050.00, 3080.60, 3052.20, 3061.00, 3068.00, 3050.40, 
+                3079.80, 3080.20, 3132.80, 3072.00
+            ];
+
+            let table = document.getElementById('stock-table');
+            table.innerHTML = ''; 
+
+            let trHeader = document.createElement('tr'); 
+            let thDate = document.createElement('th');
+            let thPrice = document.createElement('th');
+            let thDiff = document.createElement('th');
+
+            thDate.textContent = "Дата";
+            thPrice.textContent = "Цена акций";
+            thDiff.textContent = "Разница";
+
+            trHeader.appendChild(thDate);
+            trHeader.appendChild(thPrice);
+            trHeader.appendChild(thDiff);
+            table.appendChild(trHeader);
+
+            for (let i = 0; i < dates.length; i++) {
+                let tr = document.createElement('tr');
+                let tdDate = document.createElement('td');
+                let tdPrice = document.createElement('td');
+                let tdDiff = document.createElement('td');
+
+                tdDate.textContent = dates[i];
+                tdPrice.textContent = stockPrices[i].toFixed(2);
+                if (i === 0) {
+                    tdDiff.textContent = "-";
+                } else {
+                    tdDiff.textContent = (stockPrices[i] - stockPrices[i - 1]).toFixed(2);
+                }
+
+                tr.appendChild(tdDate);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdDiff);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            let maxPrice = stockPrices[0];
+            let minPrice = stockPrices[0];
+
+            for (let i = 0; i < stockPrices.length; i++) {
+                sum += stockPrices[i];
+                if (stockPrices[i] > maxPrice) maxPrice = stockPrices[i];
+                if (stockPrices[i] < minPrice) minPrice = stockPrices[i];
+            }
+
+            let average = sum / stockPrices.length;
+            average = average.toFixed(2);
+
+            let detailDiv = document.getElementById('detail');
+            detailDiv.innerHTML = `
+                Средняя цена акций: ${average}<br>
+                Максимальная цена акций: ${maxPrice.toFixed(2)}<br>
+                Минимальная цена акций: ${minPrice.toFixed(2)}
+            `;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+
+    <main>
+        <button onclick="showStockPrices()">Курс акций Группа Позитив</button>
+        <table border="1" id="stock-table">
+        </table>
+        <div id="detail"></div>
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+
+</body>
+</html>
