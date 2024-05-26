@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №7 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <script>
+        function showExchange() {
+            const exchange = [
+            91.6330, 91.3591, 91.2573, 90.9239, 90.9873, 
+            90.6537, 90.4082, 90.1887, 90.2486, 89.7026
+            ];
+            let table = document.getElementById('dollar-table');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+            
+            let sum = 0;
+            for (let i = 0; i < exchange.length; i++) {
+                sum += exchange[i];
+                
+            }
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+
+            let detailDiv = document.getElementById('detail');
+            detailDiv.innerHTML = `Среднее значение: ${average}`;
+            
+            let button = document.querySelector('button');
+            button.style.display = 'none'; 
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr>
+    </header>
+
+    <main>
+        <button onclick="showExchange()">Курс Доллара</button>
+        <table border="1" id="dollar-table"></table>
+        <div id='detail'></div>
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+
+</body>
+</html>
