@@ -10,16 +10,17 @@
     <link rel="icon" href="../favicon-32x32.ico">
     <script src="lab8.js"></script>
     <style>
-        .locale-time {
-            margin: 10px ;
+        .locale-time, .current-details {
+            margin: 10px auto;
             border: 1px solid #8a3614;
-            font-size: 19px;
+            font-size: 15px;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             border-radius: 10px;
             background-color: #e4bdab; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             font-family: 'Georgia', serif;
+            width: 300px; 
         }
     </style>
 </head>
@@ -36,6 +37,12 @@
             <div id="current-date-gr" class="locale-time"></div>
             <div id="current-date-pk" class="locale-time"></div>
             <div id="current-date-cn" class="locale-time"></div>
+
+
+            <div id="current-year" class="current-details"></div>
+            <div id="current-month" class="current-details"></div>
+            <div id="current-day" class="current-details"></div>
+            <div id="current-weekday" class="current-details"></div>
     </main>
 
     <footer>

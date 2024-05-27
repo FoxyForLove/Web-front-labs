@@ -18,6 +18,22 @@ function showDate() {
 
             let outCN = document.getElementById('current-date-cn');
             outCN.innerHTML = 'Дата и время для китайской локали: ' + today.toLocaleString('zh-CN');
-        }
+    }
+function showCurrentDetails() {
+    let today = new Date();
 
-    showDate();
+        let year = today.getFullYear();
+        let month = today.toLocaleString('default', { month: 'long' });
+        let day = today.getDate();
+        let weekday = today.toLocaleString('default', { weekday: 'long' });
+
+        document.getElementById('current-year').innerHTML = 'Текущий год: ' + year;
+        document.getElementById('current-month').innerHTML = 'Текущий месяц: ' + month;
+        document.getElementById('current-day').innerHTML = 'Текущая дата: ' + day;
+        document.getElementById('current-weekday').innerHTML = 'День недели: ' + weekday;
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        showDate();
+        showCurrentDetails();
+    });
