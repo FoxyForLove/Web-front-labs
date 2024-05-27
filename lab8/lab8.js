@@ -37,3 +37,42 @@ function showCurrentDetails() {
         showDate();
         showCurrentDetails();
     });
+function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0); 
+        /* ( : на 4, високосный; : 100, некоторые не високосные), (400 - все же високосные)*/
+    }
+function findDayOfWeek() {
+        let day = parseInt(document.getElementById('input-day').value);
+        let month = parseInt(document.getElementById('input-month').value) - 1;
+        let year = parseInt(document.getElementById('input-year').value);
+
+        if (isNaN(day) || isNaN(month) || isNaN(year)) {
+            document.getElementById('result').innerText = 'Пожалуйста, введите корректную дату.';
+            return;
+        }
+        var daysInMonth;
+            switch (month) {
+                case 1: // Февраль
+                    daysInMonth = isLeapYear(year) ? 29 : 28;
+                    break;
+                case 3: // Апрель
+                case 5: // Июнь
+                case 8: // Сентябрь
+                case 10: // Ноябрь
+                    daysInMonth = 30;
+                    break;
+                default:
+                    daysInMonth = 31;
+            }
+
+            if (day < 1 || day > daysInMonth) {
+                document.getElementById('result').innerText = 'В этом месяце нет столько дней.';
+                return;
+            }
+
+            var daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+            var inputDate = new Date(year, month, day);
+            var dayOfWeek = daysOfWeek[inputDate.getDay()];
+
+            document.getElementById('result').innerText = 'День недели: ' + dayOfWeek;
+        }
