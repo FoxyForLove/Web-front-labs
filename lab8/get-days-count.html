@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №8 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <script src="get-days-count.js"></script>
+    <style>
+        input[type="date"] {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #5c4033;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #8a3614;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #af5131;
+        }
+        #days-count {
+            margin-top: 10px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+            НГТУ, ФБ, Лабораторная работа 8
+            <hr>
+    </header>
+
+    <main>
+        <div>
+            <label for="birthday">Дата рождения: <input type="date" id="birthday"></label>
+        </div>
+        <div>
+            <button onclick="showDaysCount()">Показать число дней</button>
+            <button onclick="clearInput()">Очистить</button>
+        </div>
+        <div id="days-count"></div>
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
