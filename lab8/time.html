@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Булыгина Елизавета Денисовна. Лабораторная работа №8 </title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.ico">
+    <script src="time.js"></script>
+    <style>
+        #time {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            color: #251009;
+            font-family: 'Courier New', monospace;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        #seconds {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /*80% высоты окна браузера*/
+            font-size: 72px; 
+            font-weight: bold;
+            color: #5c4033;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body onload="showTime()">
+    <header>
+            НГТУ, ФБ, Лабораторная работа 8
+            <div id="time">00:00:00</div>
+            <hr>
+    </header>
+
+    <main>
+        <div id="seconds">00</div>
+    </main>
+
+    <footer>
+        <hr>
+            &copy; Булыгина Елизавета, ФБИ-22, 2 курс, 2024 
+    </footer>
+
+</body>
+</html>
