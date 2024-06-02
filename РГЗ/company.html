@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковские услуги для физических и юридических лиц</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://nodabank.ru/assets/images/favicons/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nodabank.ru/assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nodabank.ru/assets/images/favicons/favicon-32x32.png">
+    <script src="РГЗ.js"></script>
+    <style>
+        /* Основные стили для тела страницы */
+        body {
+            font-size: 23px;
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Основные стили для тела страницы */
+        h1, h2, h3 {
+            margin: 20px 0;
+        }
+
+        /* Стили для абзацев */
+        p {
+            font-size: 24px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        /* Стили для элементов списка */
+        ul li {
+            text-align: left;
+        }
+
+        /* Контейнер с логотипом компании */
+        .logo-container {
+            position: fixed;
+            top: 20px;
+            left: 100px;
+            z-index: 2;
+        }
+
+        /* Иконка гамбургер-меню */
+        .hamburger-menu {
+            width: 25px;
+            height: 25px;
+            position: fixed;
+            top: 25px;
+            left: 50px;
+            z-index: 2;
+            cursor: pointer;
+            background-color: rgb(255, 255, 255);
+        }
+
+        /* Стили для иконки гамбургер-меню */
+        .hamburger-menu span {
+            display: block;
+            height: 2px;
+            margin: 5px 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            transition: 0.35s all ease-in-out;
+        }
+        
+        /* Стили для иконки гамбургер-меню в открытом состоянии */
+        .hamburger-menu.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background: #7A7A7A;
+        }
+
+        .hamburger-menu.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background: #7A7A7A;
+        }
+
+        /* Стили для пунктов меню */
+        nav.menu {
+            display: none;
+            background-color: #333;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* Стили для ссылок в меню */
+        nav.menu ul li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Стили для ссылок в меню при наведении */
+        nav.menu ul li a:hover {
+            background-color: #111;
+            font-size: 1.1em;
+        }
+
+        /* Стили для подвала сайта */
+        .footer {
+            color: rgba(255, 255, 255, 0.568);
+            padding: 15px;
+            text-align: center;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        /* Стили для логотипа в подвале */
+        .footer-logo {
+            width: 100px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        /* Стили для горизонтальной линии в подвале */
+        .footer-line {
+            width: 100%;
+            height: 1.5px;
+            background-color: #31160d;
+        }
+
+        /* Стили для горизонтального списка */
+        .horizontal-list {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            text-align: center;
+            margin: 20px 0;
+            margin-bottom: 70px;
+        }
+
+        /* Стили для изображений в горизонтальном списке */
+        .horizontal-list img {
+            display: block;
+            margin: 0 auto 10px;
+            max-width: 700px;
+            height: auto;
+        }
+
+        /* Стили для темных блоков и блоков "О компании" */
+        .dark-block, .about-block {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #6b1e1e; 
+            margin: 0 auto 40px; 
+            width: 85%; 
+            color: #ffffff; 
+
+        }
+
+        /* Стили для изображений в темных блоках и блоках "О компании" */
+        .dark-block img, .about-block img {
+            border-radius: 15px;
+            max-width: 700px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        /* Стили для абзацев в блоке "О компании" */
+        .about-block p {
+            margin: 0;
+            font-size: 22px;
+            line-height: 2;
+        }
+
+        .about-block {
+            display: flex;
+        }
+        
+        /* Отображение элемента после последнего элемента в контейнере */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo-container">
+            <img src="https://nodabank.ru/assets/images/Logo.svg" class="logo" alt="logo">
+        </div>
+        
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="company.html">О компании</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="currency.html">Курс валют</a></li>
+                <li><a href="contact.html">Контактные данные</a></li>
+                <li><a href="video.html">Видео</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <h2 class="main-title">О РНКО</h2>
+        <div class="about-block">
+            <img src="https://nodabank.ru/assets/images/illustrations/logo.png" alt="Логотип РНКО" class="rounded">
+            <p style="margin-top: 50px;">
+                Менять мир вокруг, делать жизнь лучше и добиваться своих целей — то, чего хочет каждый современный успешный человек. Миссия РНКО “НОДА” помочь вам в этом.
+                Удобство, стабильность и надежность — основополагающие принципы работы РНКО “НОДА”. Мы хотим, чтобы финансовые операции перестали быть для вас насущной проблемой. Сохраним ваши средства, предоставим удобный интерфейс для управления ими, поможем в работе с зарубежными партнерами — и этим не ограничивается спектр наших услуг.
+                Хотим, чтобы сотрудничество с нами было для вас комфортным и приятным, поэтому наши сотрудники всегда рады ответить на все ваши вопросы. Действует система одного окна.
+            </p>
+        </div>
+
+        <h2>ЮРИДИЧЕСКИМ ЛИЦАМ И ИП</h2>
+        <h1>Расчетно-кассовое обслуживание</h1>
+        <h2 style="margin-bottom: 70px;">Широкий спектр операций по открытию и ведению рублевых и валютных счетов:</h2>
+        <ul class="horizontal-list">
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Расчетно-кассовое обслуживание</span>
+            </li>
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Валютный контроль</span>
+            </li>
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Конверсионные операции</span>
+            </li>
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Интернет-Банк</span>
+            </li>
+        </ul>
+        
+        <h2 style="margin-bottom: 70px;">ПРЕИМУЩЕСТВА</h2>
+        <ul class="horizontal-list">
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Быстрое открытие счета</span>
+            </li>
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Индивидуальный подход к каждому клиенту</span>
+            </li>
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Качественное обслуживание счета</span>
+            </li>
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Интернет-Банк</span>
+            </li>
+        </ul>
+
+        <div class="dark-block clearfix">
+            <img src="https://nodabank.ru/assets/images/banners/ib548x460.png" alt="Интернет-Банк" class="rounded" style="float: right; margin-left: 10px; margin-top: 100px;">
+            <h1>Интернет-Банк</h1>
+            <h2>IBANK - КОМПЛЕКСНАЯ СИСТЕМА ДИСТАНЦИОННОГО БАНКОВСКОГО ОБСЛУЖИВАНИЯ КЛАССА ИНТЕРНЕТ-БАНК</h2>
+            <p>Система решает задачи информационного и платежно-расчетного обслуживания юридических лиц.</p>
+            <h2>Преимущества работы в системе "Интернет-Банк iBANK":</h2>
+            <ul>
+                <li>Экономия времени - легкое удаленное управление средствами на счетах</li>
+                <li>Контроль средств - 24 часа в сутки из любой точки мира</li>
+                <li>Электронные банковские операции, полностью идентичные бумажным</li>
+                <li>Высокий уровень безопасности, основанный на сертифицированных криптографических библиотеках</li>
+                <li>Юридическая защита электронных операций</li>
+            </ul>
+        </div>
+
+        <h1 style="margin-bottom: 70px;">КАССОВОЕ ОБСЛУЖИВАНИЕ</h1>
+        <ul class="horizontal-list">
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Прием и выдача наличных денежных средств</span>
+            </li>
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Обмен купюр мелкого достоинства на купюры крупного достоинства</span>
+            </li>
+            <li>
+                <img src="https://nodabank.ru/assets/images/icons/check.svg" alt="Иконка">
+                <span>Оформление денежной чековой книжки</span>
+            </li>
+        </ul>
+        <div class="dark-block clearfix">
+            <img src="https://nodabank.ru/assets/images/illustrations/kassovoe_obslujivanie.png" alt="Кассовое обслуживание"  style="float: right; margin-left: 20px; margin-top: 10px;" class="rounded">
+            <h1 style="margin-top: 50px;">КАССОВОЕ ОБСЛУЖИВАНИЕ РАСЧЁТНОГО СЧЕТА КЛИЕНТА ПО ВЫГОДНЫМ ТАРИФАМ</h1>
+            <p>Высокий уровень клиентского сервиса, конкурентные тарифы, квалифицированный персонал и индивидуальный подход к обслуживанию клиентов позволяют обеспечить высокий уровень
+            <p>Мы предоставляем полный спектр услуг для своих клиентов по осуществлению расчетов в российских рублях и иностранной валюте. Сотрудники РНКО проконсультируют Вас, а также окажут необходимую помощь.</p>
+        </div>
+        
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+            <img src="https://nodabank.ru/assets/images/Logo.svg" alt="logo" class="footer-logo">
+        </div>
+        <hr class="footer-line">
+
+    </footer>
+
+</body>

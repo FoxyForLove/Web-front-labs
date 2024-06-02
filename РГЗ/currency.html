@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковские услуги для физических и юридических лиц</title>
+    <link rel="stylesheet" href="РГЗ.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://nodabank.ru/assets/images/favicons/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nodabank.ru/assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nodabank.ru/assets/images/favicons/favicon-32x32.png">
+    <script src="https://www.cbr-xml-daily.ru/money.js"></script>
+    <script src="РГЗ.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <div class="logo-container">
+            <img src="https://nodabank.ru/assets/images/Logo.svg" class="logo" alt="logo">
+        </div>
+        
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="company.html">О компании</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="currency.html">Курс валют</a></li>
+                <li><a href="contact.html">Контактные данные</a></li>
+                <li><a href="video.html">Видео</a></li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <main>
+
+        <div class="currency-calculator">
+            <h2>Конвертер валют</h2>
+            <div class="exchange-rate" id="exchangeRate">Курс Норвежской кроны (NOK):</div>
+            <input type="number" id="rubAmount" class="currency-input" placeholder="Сумма в рублях"  min="0" onkeyup="if(value<0) value=0;">
+            <button onclick="convertToNOK()" class="currency-button">Перевести в NOK</button>
+            <button onclick="convertToRUB()" class="currency-button">Перевести в RUB</button>
+            <div id="result" class="result"></div>
+            
+        </div>
+
+    </main>
+    
+    <footer class="footer">
+
+        <div class="footer-content">
+            <img src="https://nodabank.ru/assets/images/Logo.svg" alt="logo" class="footer-logo">
+        </div>
+        <hr class="footer-line">
+        
+    </footer>
+
+</body>

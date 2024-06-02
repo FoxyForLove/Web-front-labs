@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковские услуги для физических и юридических лиц</title>
+    <link rel="stylesheet" href="РГЗ.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://nodabank.ru/assets/images/favicons/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nodabank.ru/assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nodabank.ru/assets/images/favicons/favicon-32x32.png">
+    <script src="РГЗ.js"></script>
+</head>
+
+<body>
+    
+    <header>
+
+        <div class="logo-container">
+            <img src="https://nodabank.ru/assets/images/Logo.svg" class="logo" alt="logo">
+        </div>
+        
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="company.html">О компании</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="currency.html">Курс валют</a></li>
+                <li><a href="contact.html">Контактные данные</a></li>
+                <li><a href="video.html">Видео</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div class="main-title-block">
+            <h2 class="main-title">Новости</h2>
+        </div>
+        
+        <div class="news-wrapper">
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://noda.finance//storage/blog/payment_details.jpg" class="main-blog-column-image">
+                <h3 class="news-title">28.12.2023</h3>
+                <h2 class="news-heading">Уведомление об изменении реквизитов, в связи со сменой местонахождения (адреса)</h2>
+                <p class="news-preview">АО РНКО «НОДА» сообщает о новых реквизитах РНКО, которые начинают действовать с 11 января 2024 г.</p>
+                <button class="show-more-btn" onclick="showFullNews(1)">Показать полностью</button>
+                <div class="full-news" id="fullNews1">
+                    <p>
+                        <strong>Акционерное общество расчетная небанковская кредитная организация «НОДА», 
+                            (АО РНКО «НОДА») (далее по тексту – «РНКО»)
+                        </strong>, Лицензия Центрального банка Российской Федерации на осуществление банковских операций № 503-К, 
+                            уведомляет о том, что в связи завершением процедур, связанных с изменением местонахождения адреса РНКО 
+                            (новый адрес: индекс 107014, Российская Федерация, город Москва, ул. Гастелло, д. 2)
+                    </p>
+                    <p>
+                        <strong>сообщает о новых реквизитах РНКО, которые начинают действовать с 11 января 2024 г.</strong>
+                    </p>
+                    <p>
+                        <span style="text-decoration: underline; color: darkred;">
+                            БИК <strong>044525989</strong> / Корреспондентский счет: <strong>30103810845374525989</strong>
+                        </span>
+                    </p>
+                    <p>
+                        Изменение реквизитов РНКО не повлечет за собой каких-либо изменений прав и обязанностей РНКО 
+                        по отношению к своим контрагентам и клиентам по ранее заключенным договорам.
+                    </p>
+                    <p>
+                        Просим при заполнении платежных реквизитов учитывать данную информацию, а также 
+                        проинформировать Ваших контрагентов. Прежние реквизиты РНКО будут действительны в течении
+                        6 месяцев, переводы, отправленные с указанием прежних реквизитов в этот срок, будут корректно зачислены.
+                    </p>
+                    <p style="text-align: center;">
+                        <span style="color: rgb(190, 132, 118);"><em>Благодарим Вас за понимание и надеемся на продолжительное и взаимовыгодное сотрудничество!</em></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://noda.finance//storage/blog/new_year_2024.jpg" class="main-blog-column-image">
+                        <h3 class="news-title">28.12.2023</h3>
+                        <h2 class="news-heading">С Новым Годом!</h2>
+                    <p class="news-preview">АО РНКО «НОДА» поздравляет Вас с наступающим Новым годом и Рождеством!</p>
+                    <button class="show-more-btn" onclick="showFullNews(2)">Показать полностью</button>
+                    <div class="full-news" id="fullNews2">
+                        <p><span style="color: rgb(54, 95, 145);">Уважаемые клиенты!</span></p>
+                        <p><span style="text-decoration: underline; color: darkred;">28 декабря 2023 г.</span> – окончание приема заявлений на осуществление трансграничных переводов в иностранной валюте;</p>
+                        <p><span style="text-decoration: underline; color: darkred;">29 декабря 2023 г.</span> – операции в валюте РФ осуществляются в полном объеме до 17 часов;<br>
+                        После 17 часов платежи через корреспондентский счет не принимаются.<br>
+                        Переводы в иностранной валюте не осуществляются.<br>
+                        Документы, поступившие по системе «Интернет-Банк-Клиент» после 17 часов, считаются поступившими в следующем году.</p>
+                        <p><span style="text-decoration: underline; color: darkred;">С 30 декабря 2023 г. по 08 января 2024 г.</span> – выходные, праздничные дни;<br>
+                        <span style="color: rgb(190, 132, 118);"><em>Благодарим Вас за понимание, и надеемся на долгосрочное и взаимовыгодное сотрудничество в новом году!</em></span></p>
+                    </div>
+            </div>  
+        </div>
+        
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://noda.finance//storage/blog/ibank.jpg" class="main-blog-column-image">
+                <h3 class="news-title">25.12.2023</h3>
+                <h2 class="news-heading">Новый адрес Клиент-Банк</h2>
+                <p class="news-preview">Клиент-Банк перенесен на адрес https://ibank.nodabank.ru</p>
+                <button class="show-more-btn" onclick="showFullNews(3)">Показать полностью</button>
+                <div class="full-news" id="fullNews3">
+                    <p><strong style="font-size: larger;">Уважаемые клиенты!</strong></p>
+                    <p>23 декабря 2023 г. клиент-банк РНКО iBank2 был успешно перенесен на новое оборудование. Теперь он доступен по адресу <a href="https://ibank.nodabank.ru">https://ibank.nodabank.ru</a></p>
+                    <p><em>С уважением, команда поддержки клиент-банка.</em></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://noda.finance//storage/blog/190723_093034_592.png" class="main-blog-column-image">
+                <h3 class="news-title">24.10.2023</h3>
+                <h2 class="news-heading">Уведомление об изменении местонахождения (адреса)</h2>
+                <p class="news-preview"> «ХОЛМСК» уведомляет о том, что годовым общим собранием акционеров РНКО «26» июня 2023 года (Протокол № 72 от «27» июня 2023 г.) принято решение об изменении местонахождения (адреса) РНКО.</p>
+                <button class="show-more-btn" onclick="showFullNews(4)">Показать полностью</button>
+                <div class="full-news" id="fullNews4">
+                    <p><strong style="font-size: larger;">Акционерное общество расчетная небанковская кредитная организация «ХОЛМСК» (АО РНКО «ХОЛМСК»)</strong> (далее по тексту – «РНКО»), дата государственной регистрации 26 августа 2002 года, Лицензия Центрального банка Российской Федерации на осуществление банковских операций № 503-К, основной государственный регистрационный номер 1026500000141, уведомляет о том, что годовым общим собранием акционеров РНКО «26» июня 2023 года (Протокол № 72 от «27» июня 2023 г.) принято решение об изменении местонахождения (адреса) РНКО.</p>
+                    <p>Прежнее местонахождение РНКО: Российская Федерация, Сахалинская область, город Южно-Сахалинск.</p>
+                    <p>Прежний адрес РНКО: 693004, Российская Федерация, Сахалинская область, город Южно-Сахалинск, улица Ленина, дом 304Г.</p>
+                    <p>Новое местонахождение РНКО: Российская Федерация, город Москва.</p>
+                    <p>Новый адрес РНКО: 107014, Российская Федерация, город Москва, ул. Гастелло, д. 2.</p>
+                    <p>О новых реквизитах РНКО Вам будет сообщено дополнительно. Изменение реквизитов РНКО не повлечет за собой каких-либо изменений прав и обязанностей РНКО по отношению к своим контрагентам и клиентам по ранее заключенным договорам.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://noda.finance//storage/blog/050123_163926_323.jpg" class="main-blog-column-image">
+                <h3 class="news-title">24.10.2023</h3>
+                <h2 class="news-heading">Базовые тарифы</h2>
+                <p class="news-preview">c 9 января 2023 года вводится в действие новая редакция базовых тарифов комиссионного вознаграждения по операциям юридических лиц, индивидуальных предпринимателей, физических лиц </p>
+                <button class="show-more-btn" onclick="showFullNews(5)">Показать полностью</button>
+                <div class="full-news" id="fullNews5">
+                    <p><strong>Уважаемые клиенты АО РНКО «ХОЛМСК»!</strong><br><br>Уведомляем вас о том, что c 9 января 2023 года вводится в действие новая редакция базовых тарифов комиссионного вознаграждения по операциям юридических лиц, индивидуальных предпринимателей, физических лиц, занимающихся в установленном Законодательством Российской Федерации порядке частной практикой.</p>
+                    <p>Услуги РНКО по-прежнему отвечают высоким требованиям:</p>
+                    <ul>
+                    <li>скорость проведения расчётов,</li>
+                    <li>качество оказываемых услуг,</li>
+                    <li>индивидуальный подход к Клиенту,</li>
+                    <li>высокая степень надёжности.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://noda.finance//storage/blog/241222_224325_355.png" class="main-blog-column-image">
+                <h3 class="news-title">24.10.2023</h3>
+                <h2 class="news-heading">Новая редакция тарифов</h2>
+                <p class="news-preview"> Уведомляем вас о том, что c 25 июля 2022 года вводится в действие новая редакция тарифов  на расчетно-кассовое обслуживание юридических лиц, индивидуальных предпринимателей и физических лиц.</p>
+                <button class="show-more-btn" onclick="showFullNews(6)">Показать полностью</button>
+                <div class="full-news" id="fullNews6">
+                    <p><strong>Уважаемые клиенты АО РНКО «ХОЛМСК»!</strong></p>
+                    <p>Уведомляем вас о том, что c 25 июля 2022 года вводится в действие новая редакция тарифов на расчетно-кассовое обслуживание юридических лиц, индивидуальных предпринимателей и физических лиц.</p>
+                    <p>Незначительное увеличение Тарифов произведено по ряду позиций РКО.</p>
+                    <p>Услуги РНКО по прежнему отвечают высоким требованиям:</p>
+                    <ul>
+                    <li>скорость проведения расчётов,</li>
+                    <li>качество оказываемых услуг,</li>
+                    <li>индивидуальный подход к Клиенту,</li>
+                    <li>высокая степень надёжности.</li>
+                    </ul>
+                    <p>Руководство РНКО выражает надежду на Ваше понимание и дальнейшее плодотворное и взаимовыгодное сотрудничество!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://noda.finance//storage/blog/241222_223429_213.png" class="main-blog-column-image">
+                <h3 class="news-title">24.10.2023</h3>
+                <h2 class="news-heading">Изменяется тариф для юридических лиц и индивидуальных предпринимателей в иностранной валюте за валютный контроль </h2>
+                <p class="news-preview"> Уважаемые клиенты АО РНКО «ХОЛМСК», обратите внимание! </p>
+                <button class="show-more-btn" onclick="showFullNews(7)">Показать полностью</button>
+                <div class="full-news" id="fullNews7">
+                    <p><strong>Уважаемые клиенты АО РНКО «ХОЛМСК»!</strong></p>
+                    <p><strong>Уведомляем вас о том, что c 19 августа  2022 года изменяется тариф для юридических лиц и индивидуальных предпринимателей  в иностранной валюте  за валютный контроль при проведении операций между резидентом и нерезидентом, заключающийся  в осуществлении расчетов и переводов через счета резидента в долларах США.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://noda.finance//storage/blog/241222_222323_493.png" class="main-blog-column-image">
+                <h3 class="news-title">24.10.2023</h3>
+                <h2 class="news-heading">Международные переводы без ограничений для клиентов</h2>
+                <p class="news-preview"> </p>
+                <button class="show-more-btn" onclick="showFullNews(8)">Показать полностью</button>
+                <div class="full-news" id="fullNews8">
+                    <p><strong>АО РНКО «ХОЛМСК» осуществляет международные переводы клиентов – юридических лиц и индивидуальных предпринимателей без каких-либо ограничений в следующих видах валют: китайских юанях, японских иенах, азербайджанских манатах и других видах валют.</strong></p>
+                    <p>Получить консультацию по валютным переводам, а также по ведению и сопровождению ВЭД от специалистов РНКО можно по телефонам: (4242) 24-58-58 (доб.511, 221).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://memepedia.ru/wp-content/uploads/2023/01/kot-dingus-mem-768x512.jpg" class="main-blog-column-image">
+                <h3 class="news-title">06.01.2023</h3>
+                <h2 class="news-heading">Кот Максвелл</h2>
+                <p class="news-preview"> Кот Максвелл (Кот Дингус, Spinning cat) – мем с 3D-котом, который покачивается и крутится в роликах Тиктока под песню The Funky Russian Train.</p>
+                <button class="show-more-btn" onclick="showFullNews(9)">Показать полностью</button>
+                <div class="full-news" id="fullNews9">
+                    <strong>Происхождение</strong><br>
+                    В <em>ноябре-декабре 2022 года</em> в Тиктоке завирусились видео с 3D-моделью черно-белого кота, который покачивается в разные стороны под музыку The Funky Russian Train. В одном из самых популярных роликов котик дружит с капибарой.<br><br>
+
+                    <strong>История этого мема уходит в 2017 год.</strong> Тогда в <em>ноябре</em> пользователь Imgur Voidhawk42 опубликовал фото черно-белого кота, который сидит на листе бумаги.<br><br>
+
+                    В <em>2020 году</em> картинка стала вирусной, ее публиковали различные развлекательные сообщества, из нее делали мемы.<br><br>
+
+                    <em>12 октября 2022 года</em> в мастерской Steam опубликовали 3D-модель того самого кота. Автор назвал животное Дингусом (Dingus), по ошибке приняв за питомца из тикток-аккаунта @BigOldBuns.<br><br>
+
+                    На самом же деле кота из мемов зовут Джесс (Jess), и это девочка из Великобритании.
+                </div>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <div class="news-card">
+                <img src="https://memepedia.ru/wp-content/uploads/2023/12/chipi-chipi-chapa-chapa-768x512.jpg" class="main-blog-column-image">
+                <h3 class="news-title">22.12.2023</h3>
+                <h2 class="news-heading">Чипи Чипи Чапа Чапа</h2>
+                <p class="news-preview">Чипи Чипи Чапа Чапа – запоминающийся припев из песни Кристелл “Дубидубиду”, которая стала популярным мемом в интернете в конце 2023 года. </p>
+                <button class="show-more-btn" onclick="showFullNews(10)">Показать полностью</button>
+                <div class="full-news" id="fullNews10">
+                    <strong>Происхождение</strong>
+                    Путь трека к популярности начался благодаря аниматору Kuowonn, который опубликовал <em>27 октября</em> в твиттере свою вариацию Бойкиссера, танцующего под «Чипи Чипи Чaпа Чaпа». В тот же день анимация перекочевала в Тикток, где собрала около двух миллионов просмотров
+                    <div></div>
+                    В дальнейшем звук стал больше ассоциироваться с мемным мишкой Фредди из игры FNAF.
+                    <div></div>
+                    Но пика он достиг в декабре <em>2023 года</em>, когда стал ассоциироваться с другой категорией мемов. Пользователь ТикТока с ником mel0yyyy_02 опубликовал ролик, в котором трек наложили на котёнка, раскачивающегося в лотке.
+                    <div></div>
+                    Оригинальная песня называется Dubidubidu. Впервые она появилась в <em>2003 году</em> на альбоме чилийской певицы Кристель Родригез. Девочке тогда было всего 5 лет.
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-content">
+            <img src="https://nodabank.ru/assets/images/Logo.svg" alt="logo" class="footer-logo">
+        </div>
+        <hr class="footer-line">
+
+    </footer>
+
+</body>
